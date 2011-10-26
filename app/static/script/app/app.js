@@ -53,6 +53,9 @@ Ext.onReady(function() {
     }, {
       ptype: "gxp_wmsgetfeatureinfo",
       outputConfig: { width: 400 }
+    }, {
+      ptype: "gxp_legend",
+      actionTarget: "map.tbar"
     }],
 
     // layer sources
