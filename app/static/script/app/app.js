@@ -17,11 +17,26 @@ Ext.onReady(function() {
         border: false,
         items: ["mymap"]
       }, {
-        id: "westpanel",
         xtype: "container",
-        layout: "fit",
+        layout: "vbox",
         region: "west",
-        width: 200
+        align: "stretch",
+        pack: "start",
+        defaults: {
+          width: 200
+        },
+        width: 200,
+        items: [{
+          title: "Layers",
+          id: "westpanel",
+          flex: 1,
+          layout: "fit"
+        }, {
+          xtype: "container",
+          id: "legendpanel",
+          layout: "fit",
+          height: 250
+        }]
       }],
       bbar: {id: "mybbar"}
     },
@@ -55,7 +70,7 @@ Ext.onReady(function() {
       outputConfig: { width: 400 }
     }, {
       ptype: "gxp_legend",
-      actionTarget: "map.tbar"
+      outputTarget: "legendpanel"
     }],
 
     // layer sources
