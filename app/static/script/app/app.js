@@ -71,6 +71,10 @@ Ext.onReady(function() {
     }, {
       ptype: "gxp_legend",
       outputTarget: "legendpanel"
+    }, {
+      ptype: "gxp_googlegeocoder",
+      outputTarget: "geocoder",
+      outputConfig: { emptyText: "Search for a location ..." }
     }],
 
     // layer sources
@@ -88,6 +92,7 @@ Ext.onReady(function() {
     // map and layers
     map: {
       id: "mymap", // id needed to reference map in portalConfig above
+      tbar: {id: 'geocoder'},
       title: "Map",
       projection: "EPSG:900913",
       units: "m",
