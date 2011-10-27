@@ -132,7 +132,7 @@ Ext.onReady(function() {
         name: "mapnik",
         group: "background"
       }, {
-      //   source: "gdebug oogle",
+      //   source: "google",
       //   name: "ROADMAP",
       //   group: "background"
       // }, {
