@@ -84,6 +84,9 @@ Ext.onReady(function() {
         url: "/geoserver/wms",
         version: "1.1.1"
       },
+      google: {
+        ptype: "gxp_googlesource"
+      },
       osm: {
         ptype: "gxp_osmsource"
       }
@@ -103,6 +106,10 @@ Ext.onReady(function() {
       layers: [{
         source: "osm",
         name: "mapnik",
+        group: "background"
+      }, {
+        source: "google",
+        name: "ROADMAP",
         group: "background"
       }, {
         source: "local",
