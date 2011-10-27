@@ -72,6 +72,15 @@ Ext.onReady(function() {
       ptype: "gxp_legend",
       outputTarget: "legendpanel"
     }, {
+      ptype: "gxp_featuremanager",
+      id: "states_manager",
+      paging: false,
+      autoSetLayer: true
+    }, {
+      ptype: "gxp_featureeditor",
+      featureManager: "states_manager",
+      autoLoadFeatures: true
+    }, {
       ptype: "gxp_googlegeocoder",
       outputTarget: "geocoder",
       outputConfig: { emptyText: "Search for a location ..." }
@@ -84,9 +93,9 @@ Ext.onReady(function() {
         url: "/geoserver/wms",
         version: "1.1.1"
       },
-      google: {
-        ptype: "gxp_googlesource"
-      },
+      // google: {
+      //   ptype: "gxp_googlesource"  // throws "B is not defined" error
+      // },
       osm: {
         ptype: "gxp_osmsource"
       }
@@ -108,10 +117,10 @@ Ext.onReady(function() {
         name: "mapnik",
         group: "background"
       }, {
-        source: "google",
-        name: "ROADMAP",
-        group: "background"
-      }, {
+      //   source: "gdebug oogle",
+      //   name: "ROADMAP",
+      //   group: "background"
+      // }, {
         source: "local",
         name: "usa:states",
         selected: true
