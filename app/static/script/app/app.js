@@ -17,6 +17,13 @@ Ext.onReady(function() {
         border: false,
         items: ["mymap"]
       }, {
+        id: "south",
+        xtype: "container",
+        layout: "fit",
+        region: "south",
+        border: false,
+        height: 200
+      }, {
         xtype: "container",
         layout: "vbox",
         region: "west",
@@ -74,12 +81,20 @@ Ext.onReady(function() {
     }, {
       ptype: "gxp_featuremanager",
       id: "states_manager",
+      autoLoadFeatures: true,
       paging: false,
       autoSetLayer: true
     }, {
       ptype: "gxp_featureeditor",
       featureManager: "states_manager",
       autoLoadFeatures: true
+    }, {
+      ptype: "gxp_featuregrid",
+      featureManager: "states_manager",
+      outputConfig: {
+          loadMask: true
+      },
+      outputTarget: "south"
     }, {
       ptype: "gxp_googlegeocoder",
       outputTarget: "geocoder",
